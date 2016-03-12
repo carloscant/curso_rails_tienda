@@ -4,10 +4,10 @@ one:
   titulo: MyString
   descripcion: MyText
   imagen_url: MyString
-  price: 9.99
+  precio: 9.99
 
 two:
   titulo: MyString
   descripcion: MyText
   imagen_url: MyString
-  price: 9.99
+  precio: 9.99

@@ -15,7 +15,7 @@
     <td class="celda_descripcion">
       <span class="titulo"><%= product.titulo %></span><br/><br/>
       <%= truncate(strip_tags(product.descripcion),length:100) %><br/><br/>
-      <%= number_to_currency(product.price) %>
+      <%= number_to_currency(product.precio) %>
     </td>
     <td class="celda_acciones">
       <%= link_to 'Show', product %><br/>
