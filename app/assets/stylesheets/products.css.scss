@@ -1,3 +1,31 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.products{
+	
+	.titulo{
+		font-weight: bold;
+	}
+
+	.celda_imagen{
+		padding: 10px 0px;
+		text-align:center;
+		width:20%;
+	}
+
+	.celda_descripcion{
+		width: 60%;
+	}
+
+	.celda_acciones{
+		text-align:center;
+		width: 20%;
+	}
+
+
+	.impar{
+		background-color:#eeeeee;
+	}
+
+}
