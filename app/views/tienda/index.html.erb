@@ -1,0 +1,15 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Mi tienda</h1>
+<% @productos.each do |producto| %>
+	<div class="producto">
+		<%= image_tag producto.imagen_url, height: 200 %>
+		<h3><%= producto.titulo %></h3>
+		<%= sanitize(producto.descripcion) %>
+		<div class="precio">
+			<%= sprintf("%0.02f",producto.precio) + '€' %>
+		</div>
+	</div>
+<% end %>

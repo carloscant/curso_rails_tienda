@@ -10,7 +10,7 @@
 <% @products.each do |product| %>
   <tr class="linea <%= cycle('par','impar') %>">
     <td class="celda_imagen">
-      <%= image_tag product.imagen_url, width:"100x100" %>
+      <%= image_tag product.imagen_url, width:"100" %>
     </td>
     <td class="celda_descripcion">
       <span class="titulo"><%= product.titulo %></span><br/><br/>
