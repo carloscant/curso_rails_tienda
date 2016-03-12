@@ -11,3 +11,10 @@ two:
   descripcion: MyText
   imagen_url: MyString
   precio: 9.99
+
+iphone4:
+  titulo: Iphone 4
+  descripcion: Descripcion del Iphone 4
+  precio: 299.99
+  imagen_url: imagen.jpg
+
