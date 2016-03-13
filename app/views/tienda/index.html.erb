@@ -11,5 +11,6 @@
 		<div class="precio">
 			<%= sprintf("%0.02f",producto.precio) + '€' %>
 		</div>
+		<%= button_to 'Añadir al carro', carro_lineas_path(product_id: producto) %>
 	</div>
 <% end %>

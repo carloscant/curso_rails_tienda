@@ -1,18 +1,21 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  id: 1
   titulo: MyString
   descripcion: MyText
   imagen_url: MyString
   precio: 9.99
 
 two:
+  id: 2
   titulo: MyString
   descripcion: MyText
   imagen_url: MyString
   precio: 9.99
 
 iphone4:
+  id: 3
   titulo: Iphone 4
   descripcion: Descripcion del Iphone 4
   precio: 299.99

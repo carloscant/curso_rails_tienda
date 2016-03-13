@@ -18,10 +18,10 @@ class CarroLineasControllerTest < ActionController::TestCase
 
   test "should create carro_linea" do
     assert_difference('CarroLinea.count') do
-      post :create, carro_linea: { carro_id: @carro_linea.carro_id, integer: @carro_linea.integer, product_id: @carro_linea.product_id }
+      post :create, product_id: products(:iphone4).id
     end
 
-    assert_redirected_to carro_linea_path(assigns(:carro_linea))
+    assert_redirected_to carro_path(assigns(:carro_linea).carro)
   end
 
   test "should show carro_linea" do
@@ -35,15 +35,16 @@ class CarroLineasControllerTest < ActionController::TestCase
   end
 
   test "should update carro_linea" do
-    put :update, id: @carro_linea, carro_linea: { carro_id: @carro_linea.carro_id, integer: @carro_linea.integer, product_id: @carro_linea.product_id }
+    put :update, id: @carro_linea, carro_linea: { carro_id: @carro_linea.carro_id, product_id: @carro_linea.product_id }
     assert_redirected_to carro_linea_path(assigns(:carro_linea))
   end
 
   test "should destroy carro_linea" do
+
     assert_difference('CarroLinea.count', -1) do
       delete :destroy, id: @carro_linea
     end
 
-    assert_redirected_to carro_lineas_path
+    assert_redirected_to carro_path(carros(:one))
   end
 end

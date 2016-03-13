@@ -1,3 +1,5 @@
+#encoding: UTF-8
+
 class CarroLineasController < ApplicationController
   # GET /carro_lineas
   # GET /carro_lineas.json
@@ -40,11 +42,17 @@ class CarroLineasController < ApplicationController
   # POST /carro_lineas
   # POST /carro_lineas.json
   def create
-    @carro_linea = CarroLinea.new(params[:carro_linea])
+
+    #Recuperamos el carro
+    @carro = carro_actual
+    #Obtrenemos el producto
+    @producto = Product.find(params[:product_id])
+
+    @carro_linea = CarroLinea.new({carro_id: @carro.id,product_id: @producto.id})
 
     respond_to do |format|
       if @carro_linea.save
-        format.html { redirect_to @carro_linea, notice: 'Carro linea was successfully created.' }
+        format.html { redirect_to @carro, notice: 'Producto añadido correctamente.' }
         format.json { render json: @carro_linea, status: :created, location: @carro_linea }
       else
         format.html { render action: "new" }
@@ -73,10 +81,13 @@ class CarroLineasController < ApplicationController
   # DELETE /carro_lineas/1.json
   def destroy
     @carro_linea = CarroLinea.find(params[:id])
+
+    carro = @carro_linea.carro
+
     @carro_linea.destroy
 
     respond_to do |format|
-      format.html { redirect_to carro_lineas_url }
+      format.html { redirect_to carro }
       format.json { head :no_content }
     end
   end

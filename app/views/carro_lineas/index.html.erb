@@ -3,7 +3,6 @@
 <table>
   <tr>
     <th>Product</th>
-    <th>Integer</th>
     <th>Carro</th>
     <th></th>
     <th></th>
@@ -13,7 +12,6 @@
 <% @carro_lineas.each do |carro_linea| %>
   <tr>
     <td><%= carro_linea.product_id %></td>
-    <td><%= carro_linea.integer %></td>
     <td><%= carro_linea.carro_id %></td>
     <td><%= link_to 'Show', carro_linea %></td>
     <td><%= link_to 'Edit', edit_carro_linea_path(carro_linea) %></td>

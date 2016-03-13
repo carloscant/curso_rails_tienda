@@ -59,7 +59,7 @@ Tienda::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'tienda#index'
+  root :to => 'tienda#index', as: 'tienda'
 
   # See how all your routes lay out with "rake routes"
 

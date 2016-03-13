@@ -14,8 +14,7 @@
 ActiveRecord::Schema.define(:version => 20160313124001) do
 
   create_table "carro_lineas", :force => true do |t|
-    t.string   "product_id"
-    t.string   "integer"
+    t.integer  "product_id"
     t.integer  "carro_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
