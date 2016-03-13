@@ -3,6 +3,15 @@
 <% end %>
 
 <h1>Mi tienda</h1>
+
+<div>
+<% if @carro.carro_lineas.empty? %>
+	<p>No hay lineas en su carro.</p>
+<% else %>
+	<%= link_to "#{@carro.carro_lineas.length} productos en su carro", @carro %>
+<% end %>
+</div>
+
 <% @productos.each do |producto| %>
 	<div class="producto">
 		<%= image_tag producto.imagen_url, height: 200 %>
