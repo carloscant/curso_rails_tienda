@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Product:</b>
+  <%= @carro_linea.product_id %>
+</p>
+
+<p>
+  <b>Integer:</b>
+  <%= @carro_linea.integer %>
+</p>
+
+<p>
+  <b>Carro:</b>
+  <%= @carro_linea.carro_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_carro_linea_path(@carro_linea) %> |
+<%= link_to 'Back', carro_lineas_path %>

@@ -1,4 +1,10 @@
 Tienda::Application.routes.draw do
+  resources :carro_lineas
+
+
+  resources :carros
+
+
   get "tienda/index"
 
   resources :products

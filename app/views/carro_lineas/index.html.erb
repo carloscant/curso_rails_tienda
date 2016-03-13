@@ -1,0 +1,27 @@
+<h1>Listing carro_lineas</h1>
+
+<table>
+  <tr>
+    <th>Product</th>
+    <th>Integer</th>
+    <th>Carro</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @carro_lineas.each do |carro_linea| %>
+  <tr>
+    <td><%= carro_linea.product_id %></td>
+    <td><%= carro_linea.integer %></td>
+    <td><%= carro_linea.carro_id %></td>
+    <td><%= link_to 'Show', carro_linea %></td>
+    <td><%= link_to 'Edit', edit_carro_linea_path(carro_linea) %></td>
+    <td><%= link_to 'Destroy', carro_linea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Carro linea', new_carro_linea_path %>

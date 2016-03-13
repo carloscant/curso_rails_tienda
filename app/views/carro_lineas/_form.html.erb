@@ -1,0 +1,29 @@
+<%= form_for(@carro_linea) do |f| %>
+  <% if @carro_linea.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@carro_linea.errors.count, "error") %> prohibited this carro_linea from being saved:</h2>
+
+      <ul>
+      <% @carro_linea.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :product_id %><br />
+    <%= f.text_field :product_id %>
+  </div>
+  <div class="field">
+    <%= f.label :integer %><br />
+    <%= f.text_field :integer %>
+  </div>
+  <div class="field">
+    <%= f.label :carro_id %><br />
+    <%= f.number_field :carro_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
