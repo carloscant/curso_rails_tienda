@@ -3,14 +3,14 @@ class ApplicationController < ActionController::Base
 
 	private
 
-	def current_cart
+	def carro_actual
 
 		begin
-			Cart.find(session[:cart_id])
+			Carro.find(session[:carro_id])
 		rescue ActiveRecord::RecordNotFound
-			cart = Cart.create
-			session[:cart_id] = cart.id
-			cart
+			carro = Carro.create
+			session[:carro_id] = carro.id
+			carro
 		end
 		
 	end
