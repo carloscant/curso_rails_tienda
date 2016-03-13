@@ -53,6 +53,7 @@ class CarroLineasController < ApplicationController
     respond_to do |format|
       if @carro_linea.save
         format.html { redirect_to @carro, notice: 'Producto añadido correctamente.' }
+        format.js
         format.json { render json: @carro_linea, status: :created, location: @carro_linea }
       else
         format.html { render action: "new" }

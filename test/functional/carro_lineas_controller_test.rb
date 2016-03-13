@@ -24,6 +24,16 @@ class CarroLineasControllerTest < ActionController::TestCase
     assert_redirected_to carro_path(assigns(:carro_linea).carro)
   end
 
+  test "should create carro linea via ajax" do
+
+    assert_difference('CarroLinea.count') do
+      xhr :post, :create, product_id: products(:iphone4).id
+    end
+
+    assert_response :success
+
+  end
+
   test "should show carro_linea" do
     get :show, id: @carro_linea
     assert_response :success
