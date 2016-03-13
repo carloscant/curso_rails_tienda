@@ -1,0 +1,6 @@
+
+<% if @carro.carro_lineas.empty? %>
+	<p>No hay lineas en su carro.</p>
+<% else %>
+	<%= link_to "#{@carro.carro_lineas.length} productos en su carro", @carro %>
+<% end %>
