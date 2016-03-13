@@ -1,7 +1,7 @@
 class Product < ActiveRecord::Base
   attr_accessible :descripcion, :imagen_url, :precio, :titulo
 
-  has_may :carro_lineas
+  has_many :carro_lineas
 
   validates :titulo, :descripcion, :imagen_url, presence: true
   validates :precio, numericality: {greater_than_or_equal_to: 0.01}
