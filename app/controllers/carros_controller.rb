@@ -13,12 +13,23 @@ class CarrosController < ApplicationController
   # GET /carros/1
   # GET /carros/1.json
   def show
-    @carro = Carro.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @carro }
+    begin
+
+      @carro = Carro.find(params[:id])
+
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @carro }
+      end
+
+    rescue ActiveRecord::RecordNotFound
+
+      logger.error "Intento de acceso a carro"
+      redirect_to tienda_url, notice: 'Carro no valido'
+
     end
+
   end
 
   # GET /carros/new
