@@ -26,7 +26,7 @@ class CarrosController < ApplicationController
     rescue ActiveRecord::RecordNotFound
 
       logger.error "Intento de acceso a carro"
-      redirect_to tienda_url, notice: 'Carro no valido'
+      redirect_to tienda_url, notice: I18n.t('no_valido')
 
     end
 

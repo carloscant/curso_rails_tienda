@@ -1,16 +1,26 @@
 Tienda::Application.routes.draw do
-  resources :pedidos
+  
+
+  scope '(:locale)' do
+
+    resources :pedidos
 
 
-  resources :carro_lineas
+    resources :carro_lineas
 
 
-  resources :carros
+    resources :carros
 
 
-  get "tienda/index"
+    get "tienda/index"
 
-  resources :products
+    resources :products
+
+      root :to => 'tienda#index', as: 'tienda'
+
+  end
+
+
 
 
   # The priority is based upon order of creation:
@@ -62,7 +72,7 @@ Tienda::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'tienda#index', as: 'tienda'
+
 
   # See how all your routes lay out with "rake routes"
 
