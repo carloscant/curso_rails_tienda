@@ -31,7 +31,7 @@ class PedidosControllerTest < ActionController::TestCase
       post :create, pedido: { direccion: @pedido.direccion, email: @pedido.email, nombre: @pedido.nombre }
     end
 
-    assert_redirected_to pedido_path(assigns(:pedido))
+    assert_redirected_to tienda_path
   end
 
   test "should show pedido" do

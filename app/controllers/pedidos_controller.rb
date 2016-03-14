@@ -53,11 +53,21 @@ class PedidosController < ApplicationController
   def create
     @pedido = Pedido.new(params[:pedido])
 
+    @pedido.anadir_lineas(carro_actual)
+
+
     respond_to do |format|
       if @pedido.save
-        format.html { redirect_to @pedido, notice: 'Pedido was successfully created.' }
+
+        Carro.destroy(session[:carro_id])
+        session[:carro_id] = nil
+
+        format.html { redirect_to tienda_url, notice: 'Pedido was successfully created.' }
         format.json { render json: @pedido, status: :created, location: @pedido }
       else
+
+        @carro = carro_actual
+
         format.html { render action: "new" }
         format.json { render json: @pedido.errors, status: :unprocessable_entity }
       end
@@ -91,4 +101,5 @@ class PedidosController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
