@@ -11,7 +11,17 @@ class PedidosControllerTest < ActionController::TestCase
     assert_not_nil assigns(:pedidos)
   end
 
+  test "requerido lineas en carro_id" do
+
+    get :new
+    assert_redirected_to tienda_path
+    assert_equal flash[:notice], "Carro vacio"
+  end
+
   test "should get new" do
+
+    session[:carro_id] = 1
+
     get :new
     assert_response :success
   end

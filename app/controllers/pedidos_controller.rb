@@ -26,10 +26,21 @@ class PedidosController < ApplicationController
   def new
     @pedido = Pedido.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @pedido }
+    @carro = carro_actual
+
+    if @carro.carro_lineas.empty?
+
+      redirect_to tienda_url, notice: 'Carro vacio'
+
+    else
+
+      respond_to do |format|
+        format.html # new.html.erb
+        format.json { render json: @pedido }
+      end
+
     end
+    
   end
 
   # GET /pedidos/1/edit
