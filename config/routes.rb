@@ -1,4 +1,7 @@
 Tienda::Application.routes.draw do
+  resources :pedidos
+
+
   resources :carro_lineas
 
 
